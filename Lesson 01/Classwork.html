@@ -15,8 +15,6 @@
     let digit = Array.from({length: 10}, () => Math.floor(Math.random() * 100));
 
 
-
-
     // digit = digit*100
     // digit = Math.floor(digit);
 
@@ -31,7 +29,7 @@
     let book = {
         title: `title`,
         pages: 0,
-        type: `type`,
+        type: `type`
 
     }
     console.log(book)
@@ -39,7 +37,7 @@
         title: `title`,
         pages: 0,
         type: `type`,
-        author: `author`,
+        author: `author`
     }
     console.log(book)
 
@@ -48,7 +46,7 @@
             title: `title`,
             pages: 0,
             type: `type`,
-            author: `author`,
+            author: `author`
         }
     ]
     console.log(book)
@@ -66,7 +64,7 @@
 
     let heightC = 10;
     let dC = 4;
-    let v = heightC * dC;
+    let v = heightC * (dC * 3.14);
     console.log(v);
 
     // 7. У прямокутного трикутника дві сторони n (зі значенням 3) та m (зі значенням 4).
@@ -74,7 +72,10 @@
 
     let n = 3;
     let m = 4;
-    let k = n ** 2 + m ** 2
+    // let k = n ** 2 + m ** 2
+    // k = Math.sqrt(k)
+    let k = Math.sqrt(n ** 2 + m ** 2)
+
     console.log(k)
 
 
