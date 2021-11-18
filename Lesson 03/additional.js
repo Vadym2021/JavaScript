@@ -218,35 +218,39 @@ let usersWithCities = []
 // }
 // document.write(usersWithCities)
 // debugger
-let adress = [];
-for (i = 0; i < usersWithId.length;) {
-    for (const user of usersWithId) {
-        for (const key in user) {
-            // console.log(key, user[key])
-            for (const userc of citiesWithId) {
-                for (const key in userc) {
-                    // console.log(key, user[key])
-                    // adress.push(key, userc[key])
-                    if (userc.user_id === user.id) {
-                        document.write(`BINGO`)
-                        document.write(`<br>`)
-                        i++
-                    } else {
+// let adress = [];
 
-                    }
-                }
+for (const user of usersWithId) {
+    for (const key in user) {
+        // console.log(key, user[key])
+        for (const adress of citiesWithId) {
+            // for (const key in userc) {
+            // console.log(key, user[key])
+            // adress.push(key, userc[key])
+            if (adress.user_id === user.id) {
+                user.mail = adress;
+                // document.write(`BINGO`);
+                // document.write(`<br>`);
+                // usersWithCities.push(user)
+
+            } else {
+
+                // }
             }
+
         }
+        // usersWithCities.push(user)
     }
+    usersWithCities.push(user)
 }
+
 // for (const userc of citiesWithId) {
 //     for (const key in userc) {
 //         // console.log(key, user[key])
 //         adress.push(key, userc[key])
 //     }
 // }
-
-document.write(adress)
+console.log(usersWithCities)
 
 
 //
@@ -271,11 +275,51 @@ document.write(adress)
 //
 //
 //
-//         - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
-//
+// - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
+console.log(`Next task`)
+
+let dmass = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for (d in dmass) {
+    if (d % 2 === 0) {
+        console.log(d)
+    }
+}
+console.log(`Next task`)
 // - Взяти масив з 10 чисел або створити його. Створити 2й порожній масив. За допомогою будь-якого циклу скопіювати значення одного масиву в інший.
-//
-//
+let dmasstwo = [];
+dmass = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for (d in dmass) {
+    dmasstwo.push(dmass[d]);
+}
+
+console.log(dmasstwo)
+console.log(`Next task`)
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for зібрати всі букви в слово.
+let abc = ['a', 'b', 'c'];
+let plus = [];
+for (a in abc) {
+    plus = plus + abc[a];
+    // console.log(plus)
+}
+console.log(plus)
+console.log(`Next task`)
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу while зібрати всі букви в слово.
+plus = [];
+i = 0;
+while (i < abc.length) {
+    plus = plus + `${abc[i]}`;
+
+    // console.log(`${abc[i]}`)
+    i++
+}
+console.log(plus)
+console.log(`Next task`)
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for of зібрати всі букви в слово.
+
+plus = [];
+for (a of abc) {
+    plus = plus + a;
+    // console.log(a)
+}
+console.log(plus)
+console.log(`Next task`)
