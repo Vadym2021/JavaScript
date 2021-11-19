@@ -22,7 +22,7 @@ document.write(mas)
 document.write(`<br>`)
 
 let mastwo = [];
-i = 0;
+// i = 0;
 // debugger
 for (i = 0; i < 50;) {
     dig = Math.floor(Math.random() * 40)
@@ -40,7 +40,7 @@ document.write(mastwo)
 document.write(`<br>`)
 
 let masthree = [];
-i = 0;
+// i = 0;
 // debugger
 for (i = 0; i < 20; i++) {
     dig = Math.floor(Math.random() * 40)
@@ -54,7 +54,7 @@ document.write(`<br>`)
 
 // d. Заповнити масив 20ма рандомними чисалами в діапазоні від 8 до 732 (Google: Generate random number JS)
 let masfour = [];
-i = 0;
+// i = 0;
 // debugger
 for (i = 0; i < 20; i++) {
     dig = 8 + Math.floor(Math.random() * 724)
@@ -107,9 +107,10 @@ console.log(`Next task`)
 // 6. Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
 let check = [100, 250, 50, 168, 120, 345, 188];
 // check = check.map(Number)
-let checkqty = check.length;
+//
 let checksum = 0;
 let temp = 0;
+let midcheck = 0;
 // document.write(typeof checksum)
 for (i = 0; i < check.length; i++) {
     temp = `${check[i]}`;
@@ -118,7 +119,10 @@ for (i = 0; i < check.length; i++) {
     // document.write(typeof temp)
     checksum = checksum + temp;
     // document.write(checksum + `,`)
+    midcheck = checksum / check.length
 }
+document.write(`<br>`)
+document.write(midcheck)
 document.write(checksum)
 document.write(`<br>`)
 
@@ -154,7 +158,7 @@ let type = 0;
 let line = ['hello', 'owu', 'com', 'ua', 1, 10, -999, 123, 3.14, 2.7, 16, true, false]
 let newline = [];
 // let z = typeof (line[4])
-let linekey = 0;
+// let linekey = 0;
 // document.write(z)
 // for (i = 0; i < line.length; i++) {
 //     z = typeof(`${line[i]}`);
