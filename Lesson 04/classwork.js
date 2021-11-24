@@ -167,15 +167,15 @@ digisv2 = [1, 2, 3];
 
 function reverse(arr) {
     let newArr = [];
-    for (let i = newArr.length - 1, ri = 0; i >= 0; i--, ri++) {
+    for (let i = arr.length - 1, ri = 0; i >= 0; i--, ri++) {
         // const newArrElement = newArr[i];
-        newArr[ri] = newArr[i];
-        document.write(newArr[i])
-        document.write(newArr[ri])
+        newArr[ri] = arr[i];
+        // document.write(newArr[i])
+        // document.write(newArr[ri])
 
     }
     document.write(newArr)
-    document.write(`abc`)
+    // document.write(`abc`)
     return newArr;
 }
 
