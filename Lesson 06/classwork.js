@@ -28,8 +28,8 @@ document.write(`<br>NEXT TASK </br>`)
 
 arraygen = (n) => {
     let arr = []
-    for (i = 0; i < n; i++) {
-        rdig = Math.round(Math.random() * 100)
+    for (let i = 0; i < n; i++) {
+        let rdig = Math.round(Math.random() * 100)
         arr.push(rdig)
     }
     return arr
@@ -117,7 +117,7 @@ let coursesAndDurationArray = [
 ];
 
 arrsort = (arr) => {
-    resultarr = arr.sort((a, b) => a.monthDuration - b.monthDuration);
+    let resultarr = arr.sort((a, b) => a.monthDuration - b.monthDuration);
     // console.log(resultarr)
     return resultarr;
 }
