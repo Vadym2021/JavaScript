@@ -1,0 +1,20 @@
+.basediv {
+    display: flex;
+    margin: 20px;
+    background-color: #69fffa;
+    flex-direction: column;
+}
+.address{
+    background-color: burlywood;
+}
+
+.newRules{
+    display: flex;
+    margin: 20px;
+    background-color: cornflowerblue;
+    flex-direction: column;
+}
+
+.title{
+    background-color: brown;
+}

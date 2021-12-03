@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<ul class=`menu`></ul>
+
+
+<script>
+    let arrayLi = ['Main', 'Products', 'About us', 'Contacts'];
+    let menu = document.createElement('div');
+    let ul = document.createElement('ul');
+    menu.append(ul);
+    for (const string of arrayLi) {
+        let li = document.createElement('li');
+        ul.append(li);
+        li.append(string);
+        document.body.appendChild(menu);
+    }
+
+
+    // let property = ['Main', 'Products', 'About us', 'Contacts'];
+    // let menu = document.getElementsByClassName(`menu`);
+    // // console.log(menu.innerText)
+    // // console.log(menu)
+    // for (const i of property) {
+    //     let li = document.createElement(`li`)
+    //     li.innerText = i;
+    //     console.log(i)
+    //     console.log(li)
+    //     menu.appendChild(li)
+    // }
+</script>
+</body>
+</html>
