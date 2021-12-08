@@ -358,6 +358,23 @@ for (elements of usersList) {
 //     if
 // }
 
+for (const user of usersList) {
+    const recurs = (user, wrappr) => {
+        let div = document.createElement('div');
 
+        for (const userKey in user) {
+            let divItem = document.createElement('div');
+
+            typeof user[userKey] === 'object'
+                ? recurs(user[userKey], divItem)
+                : divItem.innerText = user[userKey];
+
+            div.append(divItem);
+        }
+        wrappr.append(div);
+    }
+
+    recurs(user, document.body);
+}
 
 
