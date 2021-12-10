@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // document.write(localStorage.getItem(favorires))
+    let item = localStorage.getItem(`favorites`)
+    // console.log(item)
+    if (item) {
+        const arr = JSON.parse(item)
+        for (element of arr){
+            document.write(element.name+ ` ` +element.age + ` ` + element.status + `<br>`)
+        }
+    }
+    // localStorage.getItem(`favorites`)
+    // console.log(item)
+    // document.write(item)
+    // console.log(item)
+</script>
+<!--<script src="homework.js"></script>-->
+</body>
+</html>

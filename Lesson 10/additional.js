@@ -4,12 +4,32 @@
 //     про блок або елемент на який відбувся клік.
 //     Інформація яку потрібно вивести: Назва тегу, список класів,
 //     список ід, розміри в форматі висота*ширина
+let any = document.getElementsByTagName(`*`)
+for(let element of any){
+    element.onclick = (e) => {
+        e.stopPropagation()//only top element
+        console.log(e.target.clientHeight, e.target.clientWidth)
+
+    }
+}
 
 
 // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
 //     При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
 //     Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
 
+let anyTwo = document.getElementsByTagName(`*`)
+for(let element of any){
+    element.onclick = (e) => {
+        e.stopPropagation()//only top element
+        let popup = document.createElement(`div`)
+        popup.innerText = `${e.target.clientHeight}` + ` ` +`${e.target.clientWidth}`
+        document.body.appendChild(popup)
+
+        // console.log(e.target.clientHeight, e.target.clientWidth)
+
+    }
+}
 
 // -- взять массив пользователей
 let usersWithAddress = [
@@ -69,10 +89,10 @@ tButton.onclick = function () {
     }
     if (input_Kiev.checked) {
         cityq = `Kyiv`
-        console.log(usersWithAddress.filter(value => value.status === statusq && value.age >= ageq && value.address.city === cityq))
+        // console.log(usersWithAddress.filter(value => value.status === statusq && value.age >= ageq && value.address.city === cityq))
     } else {
         cityq =``
-        console.log(usersWithAddress.filter(value => value.status === statusq && value.age >= ageq && value.address.city !== cityq))
+        // console.log(usersWithAddress.filter(value => value.status === statusq && value.age >= ageq && value.address.city !== cityq))
     }
 
 
@@ -81,8 +101,8 @@ tButton.onclick = function () {
     console.log(cityq)
     // }
     // console.log(input_false.checked)
-    // console.log(usersWithAddress.filter(value => value.status === statusq || value.age < ageq || value.address.city === cityq))
-    // console.log(usersWithAddress.filter(value => value.status === statusq && value.age >= ageq && value.address.city !== cityq))
+    // console.log(usersWithAddress.filter(value => value.status === statusq || value.age > ageq || value.address.city === cityq))
+    console.log(usersWithAddress.filter(value => value.status === statusq && value.age >= ageq && value.address.city === cityq))
     // console.log(usersWithAddress.filter(value => value.status === statusq && value.age >= ageq ))
     // console.log(usersWithAddress.filter(value => value.status === statusq ))
     // console.log(usersWithAddress.filter(value => value.status === statusq || value.age < ageq ))
@@ -98,6 +118,54 @@ tButton.onclick = function () {
 
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+let images = ['image/01.jpeg', 'image/02.jpeg','image/03.jpeg','image/04.jpeg']
+wrapDiv = document.createElement(`div`)
+imgDiv = document.createElement(`div`)
+
+img = document.createElement(`img`)
+img.setAttribute(`src`, `image/01.jpeg`)
+imgDiv.setAttribute(`class`, `carusel`)
+let forwardButton = document.createElement(`button`)
+forwardButton.innerText = `Forward`
+let backButton = document.createElement(`button`)
+backButton.innerText = `Back`
+
+
+document.body.appendChild(wrapDiv);
+wrapDiv.appendChild(imgDiv)
+imgDiv.appendChild(img)
+
+wrapDiv.appendChild(backButton)
+wrapDiv.appendChild(forwardButton)
+
+let counter = 0
+
+forwardButton.onclick = () => {
+    if (counter = images.length) {
+        counter = 3
+        img.setAttribute(`src`, images[counter])
+        console.log(counter)
+    } else {
+        counter = counter + 1
+        img.setAttribute(`src`, images[counter])
+        console.log(counter)
+    }
+}
+
+backButton.onclick = () => {
+    if (counter <= 0) {
+        counter = 0
+        img.setAttribute(`src`, images[counter])
+        console.log(counter)
+    } else {
+        counter = counter -1
+        img.setAttribute(`src`, images[counter])
+        console.log(counter)
+    }
+}
+
+
+
 
 
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
