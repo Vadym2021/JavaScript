@@ -4,8 +4,10 @@
 //     про блок або елемент на який відбувся клік.
 //     Інформація яку потрібно вивести: Назва тегу, список класів,
 //     список ід, розміри в форматі висота*ширина
+
+
 let any = document.getElementsByTagName(`*`)
-for(let element of any){
+for (let element of any) {
     element.onclick = (e) => {
         e.stopPropagation()//only top element
         console.log(e.target.clientHeight, e.target.clientWidth)
@@ -19,14 +21,27 @@ for(let element of any){
 //     Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
 
 let anyTwo = document.getElementsByTagName(`*`)
-for(let element of anyTwo){
+for (let element of anyTwo) {
     element.onclick = (e) => {
         e.stopPropagation()//only top element
         let popup = document.createElement(`div`)
-        popup.innerText = `${e.target.clientHeight}` + ` ` +`${e.target.clientWidth}`
+        popup.setAttribute('class','popup')
+        popup.innerText = `${e.target.clientHeight}` + ` ` + `${e.target.clientWidth} ` + ` ` + `${e.target.classList}` + ` ` + `${e.target.tagName}`
         document.body.appendChild(popup)
 
-        // console.log(e.target.clientHeight, e.target.clientWidth)
+        let closePopup = document.createElement('button')
+        closePopup.innerText = 'Close Popups'
+        popup.appendChild(closePopup)
+
+        closePopup.onclick = () => {
+            let pops = document.getElementsByClassName('popup')
+            for (const pop of pops) {
+                pop.style.display = 'none'
+
+            }
+            // closePopup.style.display = 'none';
+            // return(popup)
+        }
 
     }
 }
@@ -91,7 +106,7 @@ tButton.onclick = function () {
         cityq = `Kyiv`
         // console.log(usersWithAddress.filter(value => value.status === statusq && value.age >= ageq && value.address.city === cityq))
     } else {
-        cityq =``
+        cityq = ``
         // console.log(usersWithAddress.filter(value => value.status === statusq && value.age >= ageq && value.address.city !== cityq))
     }
 
@@ -118,7 +133,7 @@ tButton.onclick = function () {
 
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
-let images = ['image/01.jpeg', 'image/02.jpeg','image/03.jpeg','image/04.jpeg']
+let images = ['image/01.jpeg', 'image/02.jpeg', 'image/03.jpeg', 'image/04.jpeg']
 wrapDiv = document.createElement(`div`)
 imgDiv = document.createElement(`div`)
 
@@ -158,14 +173,11 @@ backButton.onclick = () => {
         img.setAttribute(`src`, images[counter])
         console.log(counter)
     } else {
-        counter = counter -1
+        counter = counter - 1
         img.setAttribute(`src`, images[counter])
         console.log(counter)
     }
 }
-
-
-
 
 
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
@@ -180,6 +192,7 @@ function get_selected_text() {
         console.log(select.toString());
     }
 }
+
 window.addEventListener("mousedown", onmousedown)
-    get_selected_text()
+get_selected_text()
 

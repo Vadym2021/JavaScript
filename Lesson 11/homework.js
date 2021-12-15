@@ -11,10 +11,17 @@ Button.innerText = `Save`
 document.body.append(input_name, input_age, Button);
 
 Button.onclick = function () {
-    let input_name_value = input_name.value
-    let input_age_value = input_age.value
-    localStorage.setItem(`name`, input_name_value)
-    localStorage.setItem(`age`, input_age_value)
+    let obj = {
+        name: input_name.value,
+        age: input_age.value
+    }
+
+
+    // let input_name_value = input_name.value
+    // let input_age_value = input_age.value
+    // localStorage.setItem(`name`, input_name_value)
+    // localStorage.setItem(`age`, input_age_value)
+    localStorage.setItem('obj', JSON.stringify(obj))
 }
 
 
@@ -36,13 +43,23 @@ carButton.innerText = `Car log`
 document.body.append(input_model, input_type, input_volume, carButton);
 let carArr = []
 carButton.onclick = function () {
-    let input_model_value = input_model.value
-    let input_type_value = input_type.value
-    let input_volume_value = input_volume.value
-    carArr.push({model:input_model_value, type:input_type_value, volume:input_volume_value})
-    console.log(carArr)
-    localStorage.setItem(`carArr`, JSON.stringify(carArr))
 
+    let data = JSON.parse(localStorage.getItem('carArr'))
+    if (data) {
+        let input_model_value = input_model.value
+        let input_type_value = input_type.value
+        let input_volume_value = input_volume.value
+        data.push({model: input_model_value, type: input_type_value, volume: input_volume_value})
+        console.log(data)
+        localStorage.setItem(`carArr`, JSON.stringify(data))
+    } else {
+        let input_model_value = input_model.value
+        let input_type_value = input_type.value
+        let input_volume_value = input_volume.value
+        carArr.push({model: input_model_value, type: input_type_value, volume: input_volume_value})
+        console.log(carArr)
+        localStorage.setItem(`carArr`, JSON.stringify(carArr))
+    }
 }
 
 
