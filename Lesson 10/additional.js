@@ -19,7 +19,7 @@ for(let element of any){
 //     Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
 
 let anyTwo = document.getElementsByTagName(`*`)
-for(let element of any){
+for(let element of anyTwo){
     element.onclick = (e) => {
         e.stopPropagation()//only top element
         let popup = document.createElement(`div`)
