@@ -254,21 +254,25 @@ wakeUp2(true)
 
 
 async function workday() {
-    const next1 = await wakeUp2(true)
-    const next2 = await cleanTeeth2(true)
-    const next3 = await haveBreakfast2(true)
-    const next4 = await getDressed2(true)
-    const next5 = await goToWork2(true)
-    const next6 = await workProcess2(true)
-    const next7 = await lunchTime2(true)
+    try {
+        const next1 = await wakeUp2(true)
+        const next2 = await cleanTeeth2(true)
+        const next3 = await haveBreakfast2(true)
+        const next4 = await getDressed2(true)
+        const next5 = await goToWork2(true)
+        const next6 = await workProcess2(true)
+        const next7 = await lunchTime2(true)
 
-    console.log(next1)
-    console.log(next2)
-    console.log(next3)
-    console.log(next4)
-    console.log(next5)
-    console.log(next6)
-    console.log(next7)
+        console.log(next1)
+        console.log(next2)
+        console.log(next3)
+        console.log(next4)
+        console.log(next5)
+        console.log(next6)
+        console.log(next7)
+    } catch (e) {
+        console.error(e)
+    }
 }
 
 

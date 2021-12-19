@@ -103,7 +103,7 @@ for (let obj of users) {
     favButton.onclick = () => {
         const data = localStorage.getItem('favorites')
         if (data) {
-            const arr = JSON.parse(data)
+            // const arr = JSON.parse(data)
             localStorage.setItem('favorites', JSON.stringify([...arr, obj]))
         } else {
             localStorage.setItem('favorites', JSON.stringify([obj]))
